@@ -1,0 +1,233 @@
+body{
+    /*background-color: rgba(9, 45, 250, 0.4); /* ใช้รหัสสี RGB */
+    /* background: linear-gradient(Plum, rgb(253, 212, 219)); */
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* background-color: black; */
+}
+
+.login-box {
+    width: 300px;
+    /* background-color: #ffffff; */
+    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: solid none;
+    border-radius: 10px;
+  }
+
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .user-box {   /*โดยปกติแล้ว องค์ประกอบภายใน .user-box จะแสดงในแนวนอน แต่เมื่อเราใช้ flex-direction: column จะทำให้องค์ประกอบภายในจัดเรียงในแนวตั้ง ดังนั้น <label> จะแสดงก่อน <input> และจะอยู่คนละบรรทัดกัน.*/
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Register-box{
+    width: 300px;
+    background-color: #ffffff;
+    padding: 40px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  /*จัดกึ่งกลางหน้าจอ*/
+    border: solid none;
+    border-radius: 10px;
+  }
+
+  .container{
+    margin-left: 15px;
+  }
+
+  .Regis-box{
+    width: 250px;
+    height: 10px;
+    border-radius:8px;
+    border: none;
+    background-Color: Gainsboro;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar{
+    display: flex;
+    align-items: center;
+  }
+
+  .logout-button {
+    background-color: transparent;
+    border: none;
+    color: wheat;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .logout-button.danger:hover {  /*:hover: นี่คือ Pseudo-class ที่ใช้กำหนดสไตล์เมื่อองค์ประกอบนี้อยู่ในสถานะ hover หมายความว่าเมื่อเมาส์ชี้ไปที่องค์ประกอบนี้ สไตล์ที่กำหนดในบรรทัดนี้จะมีผล โดยในที่นี้กำหนดให้พื้นหลัง */
+    background-color: red;   
+    color: white;
+  } 
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: auto;
+    width: 10vw;  
+    height: 4vh;
+  }
+  
+
+  .search-container {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    text-align: 'center';
+    width: 100%;
+    
+  }
+  
+  .Label-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: auto;
+    width: 20vw;  
+    /* height: 8vh;*/
+    font-size: 16px;
+    color: white;
+  }
+
+  /* สไตล์เริ่มต้นสำหรับตารางการ์ด */
+.list-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 16px;
+}
+
+
+/* Media query สำหรับหน้าจอขนาดเล็กมากขึ้น (เช่น อุปกรณ์มือถือ แท็บเล็ต) */
+@media only screen and (min-width: 1024px) {
+  .list-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imgmodal {
+    height: 80vh !important;
+  }
+/* ปรับขนาด Navbar สำหรับหน้าจอขนาดเล็ก (เช่น 768px) */
+  .resizable-menu {
+    width: 40vw !important; 
+  }
+  .resizable-search {
+
+  }
+  .Label-container {
+
+  }
+  .button-container {
+
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .list-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imgmodal {
+    height: 60vh !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .list-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imgmodal {
+    height: 50vh !important;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .list-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .imgmodal {
+    height: 30vh !important;
+  }
+
+  /* ปรับขนาด Navbar สำหรับหน้าจอขนาดเล็ก (เช่น 768px) */
+  .resizable-menu {
+    width: 40vw !important; 
+  }
+  .resizable-search {
+    width: 30vw !important;  /*ความกว้าง 40vw และความสูง 5vh โดย viewport units (vw และ vh) จะให้ขนาดเทียบเท่ากับเปอร์เซ็นต์ของความกว้างและความสูงของหน้าจอ*/
+    height: 5vh !important;
+  }
+  .Label-container {
+
+  }
+  .button-container {
+
+  }
+}
+
+.button-title{
+  background: linear-gradient(rgb(225, 27, 116), rgb(243, 147, 163)); 
+  color: white;
+  width: 20vw;  
+  height: 5vh;
+  text-align: 'center';
+  font-size: 18px;
+}
+.button-title.danger:hover {  /*:hover: นี่คือ Pseudo-class ที่ใช้กำหนดสไตล์เมื่อองค์ประกอบนี้อยู่ในสถานะ hover หมายความว่าเมื่อเมาส์ชี้ไปที่องค์ประกอบนี้ สไตล์ที่กำหนดในบรรทัดนี้จะมีผล โดยในที่นี้กำหนดให้พื้นหลัง */ 
+  color: black;
+  border-color: white;
+} 
+
+/*Style Homepage*/
+.carousel-container {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.carousel-card {
+  flex: 0 0 calc(100% / 5); 
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.imgmodal {
+  height: 80vh;
+}
+
+.navbar-top{
+  height: 65px !important;
+}
+
+
+
+
+
+
+
+  
+  
+
+  
